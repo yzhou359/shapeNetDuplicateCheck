@@ -250,12 +250,13 @@ double IcpPointToPlane::fitStep (double *T,const int32_t T_num,Matrix &R,Matrix 
   return 0;
 }
 
-std::vector<int32_t> IcpPointToPlane::getInliers (double *T,const int32_t T_num,const Matrix &R,const Matrix &t,const double indist) {
+std::vector<int32_t> IcpPointToPlane::getInliers (double *T,const int32_t T_num,const Matrix &R,const Matrix &t,const double indist, double* distance) {
   
    // init inlier vector + query point + query result
   vector<int32_t>            inliers;
   std::vector<float>         query(dim);
   kdtree::KDTreeResultVector neighbor;
+  int						 indistNum = 0;
   
   // dimensionality 2
   if (dim==2) {
@@ -320,9 +321,20 @@ std::vector<int32_t> IcpPointToPlane::getInliers (double *T,const int32_t T_num,
       double nz = M_normal[neighbor[0].idx*3+2];
 
       // check if it is an inlier
-      if ((sx-dx)*nx+(sy-dy)*ny+(sz-dz)*nz<indist)
-        inliers.push_back(i);
+	  double tmpDist = abs((sx - dx)*nx + (sy - dy)*ny + (sz - dz)*nz);
+	  if (tmpDist < indist)
+	  {
+		  inliers.push_back(i);
+		  if (distance != NULL)
+		  {
+			  *distance += tmpDist;
+			  indistNum++;
+		  }
+		  
+	  } 
     }
+	if(distance!=NULL)
+		inliers.push_back(indistNum);
   }
   
   // return vector with inliers

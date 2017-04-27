@@ -5,8 +5,6 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "shapeNetDuplicateCheck", "shapeNetDuplicateCheck\shapeNetDuplicateCheck.vcxproj", "{7212A6C9-5CDC-4546-87EF-8F0B6BB50F4C}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "icp", "libicp\build\icp.vcxproj", "{B1CAEC90-2FD5-3E2D-833A-7E2C933AB951}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -29,24 +27,13 @@ Global
 		{7212A6C9-5CDC-4546-87EF-8F0B6BB50F4C}.MinSizeRel|x86.Build.0 = Release|Win32
 		{7212A6C9-5CDC-4546-87EF-8F0B6BB50F4C}.Release|x64.ActiveCfg = Release|x64
 		{7212A6C9-5CDC-4546-87EF-8F0B6BB50F4C}.Release|x64.Build.0 = Release|x64
+		{7212A6C9-5CDC-4546-87EF-8F0B6BB50F4C}.Release|x64.Deploy.0 = Release|x64
 		{7212A6C9-5CDC-4546-87EF-8F0B6BB50F4C}.Release|x86.ActiveCfg = Release|Win32
 		{7212A6C9-5CDC-4546-87EF-8F0B6BB50F4C}.Release|x86.Build.0 = Release|Win32
 		{7212A6C9-5CDC-4546-87EF-8F0B6BB50F4C}.RelWithDebInfo|x64.ActiveCfg = Release|x64
 		{7212A6C9-5CDC-4546-87EF-8F0B6BB50F4C}.RelWithDebInfo|x64.Build.0 = Release|x64
 		{7212A6C9-5CDC-4546-87EF-8F0B6BB50F4C}.RelWithDebInfo|x86.ActiveCfg = Release|Win32
 		{7212A6C9-5CDC-4546-87EF-8F0B6BB50F4C}.RelWithDebInfo|x86.Build.0 = Release|Win32
-		{B1CAEC90-2FD5-3E2D-833A-7E2C933AB951}.Debug|x64.ActiveCfg = Debug|x64
-		{B1CAEC90-2FD5-3E2D-833A-7E2C933AB951}.Debug|x64.Build.0 = Debug|x64
-		{B1CAEC90-2FD5-3E2D-833A-7E2C933AB951}.Debug|x86.ActiveCfg = Debug|x64
-		{B1CAEC90-2FD5-3E2D-833A-7E2C933AB951}.MinSizeRel|x64.ActiveCfg = MinSizeRel|x64
-		{B1CAEC90-2FD5-3E2D-833A-7E2C933AB951}.MinSizeRel|x64.Build.0 = MinSizeRel|x64
-		{B1CAEC90-2FD5-3E2D-833A-7E2C933AB951}.MinSizeRel|x86.ActiveCfg = MinSizeRel|x64
-		{B1CAEC90-2FD5-3E2D-833A-7E2C933AB951}.Release|x64.ActiveCfg = Release|x64
-		{B1CAEC90-2FD5-3E2D-833A-7E2C933AB951}.Release|x64.Build.0 = Release|x64
-		{B1CAEC90-2FD5-3E2D-833A-7E2C933AB951}.Release|x86.ActiveCfg = Release|x64
-		{B1CAEC90-2FD5-3E2D-833A-7E2C933AB951}.RelWithDebInfo|x64.ActiveCfg = RelWithDebInfo|x64
-		{B1CAEC90-2FD5-3E2D-833A-7E2C933AB951}.RelWithDebInfo|x64.Build.0 = RelWithDebInfo|x64
-		{B1CAEC90-2FD5-3E2D-833A-7E2C933AB951}.RelWithDebInfo|x86.ActiveCfg = RelWithDebInfo|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

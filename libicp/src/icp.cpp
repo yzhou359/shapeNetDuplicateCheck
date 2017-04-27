@@ -77,7 +77,7 @@ void Icp::fit (double *T,const int32_t T_num,Matrix &R,Matrix &t,const double in
     for (int32_t i=0; i<T_num; i++)
       active.push_back(i);
   } else {
-    active = getInliers(T,T_num,R,t,indist);
+    active = getInliers(T,T_num,R,t,indist, NULL);
   }
   
   // run icp

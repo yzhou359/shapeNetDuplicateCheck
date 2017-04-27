@@ -13,8 +13,8 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Source Files\libicp">
-      <UniqueIdentifier>{1d4d9b88-b955-4444-ab0a-ffce1a821717}</UniqueIdentifier>
+    <Filter Include="Source Files\ICP">
+      <UniqueIdentifier>{c3971696-a90d-45be-a720-d2a50b566e6a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -27,22 +27,28 @@
     <ClInclude Include="targetver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\libicp\src\icp.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\libicp\src\icpPointToPlane.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\libicp\src\icpPointToPoint.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\libicp\src\kdtree.h">
+    <ClInclude Include="..\PLY_Loader-master\plyloader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\libicp\src\matrix.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\PLY_Loader-master\plyloader.h">
+    <ClInclude Include="..\libicp\src\kdtree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libicp\src\icpPointToPoint.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libicp\src\icpPointToPlane.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\libicp\src\icp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\point-to-plane\dist2Triangle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\point-to-plane\Matrix2D.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -56,19 +62,22 @@
     <ClCompile Include="..\PLY_Loader-master\plyloader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\libicp\src\kdtree.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\libicp\src\icp.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\ICP</Filter>
     </ClCompile>
     <ClCompile Include="..\libicp\src\icpPointToPlane.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\ICP</Filter>
     </ClCompile>
     <ClCompile Include="..\libicp\src\icpPointToPoint.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\ICP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\libicp\src\kdtree.cpp">
+      <Filter>Source Files\ICP</Filter>
     </ClCompile>
     <ClCompile Include="..\libicp\src\matrix.cpp">
+      <Filter>Source Files\ICP</Filter>
+    </ClCompile>
+    <ClCompile Include="..\point-to-plane\distToClosestCompatibleFace.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -247,6 +247,7 @@ PLYModel::PLYModel(const char* filename, bool isNormal, bool isColor) {
 		if(!ifNormal)
 		{
 			cout<<"\nFile doesn't contain the Normal Information, check the constructor call";
+			system("pause");
 			exit(0);
 		}
 		inputPly.read((char *)&Value,sizeof(Value));

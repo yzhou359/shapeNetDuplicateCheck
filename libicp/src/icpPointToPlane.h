@@ -31,6 +31,8 @@ public:
     M_normal = computeNormals(num_neighbors,flatness);
   }
 
+  std::vector<int32_t> getInliers(double *T, const int32_t T_num, const Matrix &R, const Matrix &t, const double indist, double* distance);
+
   virtual ~IcpPointToPlane () {
     free(M_normal);
   }
@@ -38,7 +40,7 @@ public:
 private:
 
   double fitStep (double *T,const int32_t T_num,Matrix &R,Matrix &t,const std::vector<int32_t> &active);
-  std::vector<int32_t> getInliers (double *T,const int32_t T_num,const Matrix &R,const Matrix &t,const double indist);
+  
   
   // utility functions to compute normals from the model tree
   void computeNormal (const kdtree::KDTreeResultVector &neighbors,double *M_normal,const double flatness);
