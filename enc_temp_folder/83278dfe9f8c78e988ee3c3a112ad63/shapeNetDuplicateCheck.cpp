@@ -503,7 +503,6 @@ void findDuplicate(string fileDir, string fileDir_VN, double thd)
 void findDuplicate_biDistance(string fileDir, string fileDir_VN, double thd)
 {
 	int startIdx = 0;
-	int endIdx = 100;
 	ifstream infile, cmpInfile, knnfile;
 	infile.open(fileDir + "list.txt");
 	knnfile.open(fileDir + "knn.txt");
@@ -529,11 +528,6 @@ void findDuplicate_biDistance(string fileDir, string fileDir_VN, double thd)
 			cout << "Skip # " << iShape << "file " << fileName << endl;
 			iShape++;
 			continue;
-		}
-		if (iShape == endIdx)
-		{
-			cout << "FINISHED AT # " << iShape << "file " << fileName << endl;
-			return;
 		}
 
 		// read 1st ply file

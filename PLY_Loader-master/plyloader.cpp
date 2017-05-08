@@ -251,7 +251,8 @@ PLYModel::PLYModel(const char* filename, bool isNormal, bool isColor) {
 			exit(0);
 		}
 		inputPly.read((char *)&Value,sizeof(Value));
-		//cout<<"\n"<<Values._x <<"\t"<< Values._y <<"\t"<< Values._z <<"\t"<< Values._nx <<"\t"<< Values._ny <<"\t"<< Values._nz <<"\t"<< Values._r <<"\t"<< Values._g <<"\t"<< Values._b <<"\t"<< Values._a;
+		//cout<<"\n"<<Value._x <<"\t"<< Value._y <<"\t"<< Value._z <<"\t"<< Value._nx <<"\t"<< Value._ny <<"\t"<< Value._nz << endl;
+
 		min = max = vec3(Value._x, Value._y, Value._z);
 
 		positions.push_back(vec3(Value._x, Value._y, Value._z));

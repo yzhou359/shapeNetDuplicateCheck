@@ -160,6 +160,7 @@
     <ClInclude Include="..\PLY_Loader-master\plyloader.h" />
     <ClInclude Include="..\point-to-plane\dist2Triangle.h" />
     <ClInclude Include="..\point-to-plane\Matrix2D.h" />
+    <ClInclude Include="shapeNetDuplicateCheck.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
@@ -170,6 +171,7 @@
     <ClCompile Include="..\libicp\src\kdtree.cpp" />
     <ClCompile Include="..\libicp\src\matrix.cpp" />
     <ClCompile Include="..\PLY_Loader-master\plyloader.cpp" />
+    <ClCompile Include="..\point-to-plane\dist2Triangle.cpp" />
     <ClCompile Include="..\point-to-plane\distToClosestCompatibleFace.cpp" />
     <ClCompile Include="shapeNetDuplicateCheck.cpp" />
     <ClCompile Include="stdafx.cpp">
