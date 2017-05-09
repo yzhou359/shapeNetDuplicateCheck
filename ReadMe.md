@@ -32,7 +32,7 @@
 
 	\> ~\ShapeNetCore.v2\ShapeNetCore.sample\$categoryNum\ cp 'list.txt' 'list - Copy.txt' | cp 'hash.txt' 'hash - Copy.txt'
 
-5. create list.txt in dis folder
+5. create list.txt in dis folder [before step 5]
 
 	\> ~\ShapeNetCore.v2\ShapeNetCore.sample\$categoryNum\dis\ dir /b | findstr duplicate- > list.txt
 
