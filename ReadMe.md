@@ -40,5 +40,5 @@
 
 
 ## Visualization Website:
-	[a link] http://antares.cs.umass.edu/project_data/AdversarialMonsters/UserStudy/ShapeNetDuplicate/index.php
+	[Check here!](http://antares.cs.umass.edu/project_data/AdversarialMonsters/UserStudy/ShapeNetDuplicate/index.php)
 
