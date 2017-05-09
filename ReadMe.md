@@ -1,6 +1,5 @@
 
 # ShapeNetDuplicateCheck Project Overview
-=============================================================================
 
 ## C++ implementation of checking duplicates in ShapeNetCore v2 dataset.
 
@@ -39,6 +38,7 @@
 
 
 
-## Visualization Website:
-	[Check here!](http://antares.cs.umass.edu/project_data/AdversarialMonsters/UserStudy/ShapeNetDuplicate/index.php)
+## Visualization Website: 
+
+Check it [here](http://antares.cs.umass.edu/project_data/AdversarialMonsters/UserStudy/ShapeNetDuplicate/index.php).
 
