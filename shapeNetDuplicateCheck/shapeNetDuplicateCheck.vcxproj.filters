@@ -16,9 +16,12 @@
     <Filter Include="Source Files\ICP">
       <UniqueIdentifier>{c3971696-a90d-45be-a720-d2a50b566e6a}</UniqueIdentifier>
     </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="ReadMe.txt" />
+    <Filter Include="Source Files\Point-to-plane Distance">
+      <UniqueIdentifier>{7545c5fa-d9f7-4a2a-b8c4-6e394cbfb510}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\PlyIO">
+      <UniqueIdentifier>{35448d13-1669-488f-a871-0781f373bb34}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -62,9 +65,6 @@
     <ClCompile Include="shapeNetDuplicateCheck.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\PLY_Loader-master\plyloader.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\libicp\src\icp.cpp">
       <Filter>Source Files\ICP</Filter>
     </ClCompile>
@@ -80,11 +80,17 @@
     <ClCompile Include="..\libicp\src\matrix.cpp">
       <Filter>Source Files\ICP</Filter>
     </ClCompile>
-    <ClCompile Include="..\point-to-plane\distToClosestCompatibleFace.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="..\point-to-plane\dist2Triangle.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Point-to-plane Distance</Filter>
     </ClCompile>
+    <ClCompile Include="..\point-to-plane\distToClosestCompatibleFace.cpp">
+      <Filter>Source Files\Point-to-plane Distance</Filter>
+    </ClCompile>
+    <ClCompile Include="..\PLY_Loader-master\plyloader.cpp">
+      <Filter>Source Files\PlyIO</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\ReadMe.txt" />
   </ItemGroup>
 </Project>

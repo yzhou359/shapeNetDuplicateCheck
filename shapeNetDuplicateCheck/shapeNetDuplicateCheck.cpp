@@ -499,11 +499,14 @@ void findDuplicate(string fileDir, string fileDir_VN, double thd)
 	duplicatefile_thd.close();
 }
 
-
-void findDuplicate_biDistance(string fileDir, string fileDir_VN, double thd)
+void findDuplicate_biDistance(string fileDir, string fileDir_VN, double thd, int startIdx, int endIdx)
 {
-	int startIdx = 0;
-	int endIdx = 100;
+	//int startIdx = 0;
+	//int endIdx = 100;
+
+	cout << "Find Duplicate - with Bi-distance: \n";
+	cout << "Start : " << startIdx << " , End : " << endIdx << endl;
+
 	ifstream infile, cmpInfile, knnfile;
 	infile.open(fileDir + "list.txt");
 	knnfile.open(fileDir + "knn.txt");
@@ -697,7 +700,8 @@ void findDuplicate_biDistance(string fileDir, string fileDir_VN, double thd)
 				ratioDis = sptr / plySize2;
 				//cout << "Abs dis: " << absDis << " , ratio dis: " << ratioDis << endl;
 
-				s.dist = ratioDis;
+				s.dist += ratioDis;
+				s.dist /= 2;
 
 
 				// =========================== END OF DISTANCE ==============================================================
@@ -707,7 +711,6 @@ void findDuplicate_biDistance(string fileDir, string fileDir_VN, double thd)
 				cmpShapeNet.push_back(s);
 
 				// free memory
-
 				free(plyMatrix20);
 
 				iCmpshape++;
@@ -755,7 +758,6 @@ void findDuplicate_biDistance(string fileDir, string fileDir_VN, double thd)
 	duplicatefile.close();
 	duplicatefile_thd.close();
 }
-
 
 int countDuplicate(string fileDir, double thd)
 {
@@ -924,11 +926,13 @@ int main(int argc, char** argv)
 	}
 	string categoryNum = argv[1];
 	string choiceNum = argv[2];
-	string param, param2;
-	if (argc == 4)
+	string param, param2, param3;
+	if (argc >= 4)
 		param = argv[3];
-	if (argc == 5)
+	if (argc >= 5)
 		param2 = argv[4];
+	if (argc >= 6)
+		param3 = argv[5];
 
 
 	string datasetDir = "E:/Dataset/Lun/Models/ShapeNetCore.v2/ShapeNetCore.v2/";
@@ -959,50 +963,18 @@ int main(int argc, char** argv)
 	if (choiceNum.compare("4") == 0)
 	{
 		cout << "Accuratly find distance between neighbors and judge duplicates." << endl;
-		//findDuplicate(fileDir, fileDir_VN, atof(param.c_str()));
-		findDuplicate_biDistance(fileDir, fileDir_VN, atof(param.c_str()));
+		//findDuplicate(fileDir, fileDir_VN, atof(param.c_str()));   // only sample-to-mesh distance
+
+		findDuplicate_biDistance(fileDir, fileDir_VN, atof(param.c_str()), atoi(param2.c_str()), atoi(param3.c_str()));
+		// Usage: findDuplicate_biDistance(sample_directory, mesh_directory, duplicate_threshold, startIdx, endIdx)
+	}
+	if (choiceNum.compare("5") == 0)
+	{
+		cout << " Find total number of duplicates based on duplicate-xxx file. " << endl;
+		int c = countDuplicate(fileDir, 0.0001);
+		cout << c << endl;
 	}
 	
-	if (choiceNum.compare("-2") == 0)
-	{
-		cout << "Testing tmp codes ..." << endl;
-		mxArray *Ps = mxCreateDoubleMatrix(3, 3, mxREAL);
-		double* ptrPs = mxGetPr(Ps);
-		ptrPs[0] = 0; ptrPs[1] = 0; ptrPs[2] = 0;
-		ptrPs[3 + 0] = 1; ptrPs[3 + 1] = 0; ptrPs[3 + 2] = 0;
-		ptrPs[6 + 0] = 0; ptrPs[6 + 1] = 1; ptrPs[6 + 2] = 0;
-		mxArray *F = mxCreateDoubleMatrix(3, 1, mxREAL);
-		double* ptrF = mxGetPr(F);
-		ptrF[0] = 0; ptrF[1] = 1; ptrF[2] = 2;
-		mxArray *Nf = mxCreateDoubleMatrix(3, 1, mxREAL);
-		double* ptrNf = mxGetPr(Nf);
-		ptrNf[0] = 0; ptrNf[1] = 0; ptrNf[2] = 1;
-		mxArray *Nv = mxCreateDoubleMatrix(3, 3, mxREAL);
-		double* ptrNv = mxGetPr(Nv);
-		ptrNv[0] = 0; ptrNv[1] = 0.3; ptrNv[2] = 0.9;
-		ptrNv[3 + 0] = 0.4; ptrNv[3 + 1] = 0; ptrNv[3 + 2] = 0.9;
-		ptrNv[6 + 0] = 0; ptrNv[6 + 1] = 0.2; ptrNv[6 + 2] = 0.9;
-		mxArray *Qs = mxCreateDoubleMatrix(3, 1, mxREAL);
-		double* ptrQs = mxGetPr(Qs);
-		ptrQs[0] = -0.5; ptrQs[1] = 3; ptrQs[2] = -1;
-		mxArray *Nq = mxCreateDoubleMatrix(3, 1, mxREAL);
-		double* ptrNq = mxGetPr(Nq);
-		ptrNq[0] = 0.4; ptrNq[1] = 0.3; ptrNq[2] = -0.9;
-		mxArray *NormalCheck = mxCreateDoubleMatrix(1, 1, mxREAL);
-		double* ptrNormalCheck = mxGetPr(NormalCheck);
-		ptrNormalCheck[0] = 3.14;
-
-		const mxArray *prhs[] = { Ps, F, Nf, Nv, Qs, Nq, NormalCheck };
-
-		mxArray *Ds = mxCreateDoubleMatrix(1, 1, mxREAL);
-		mxArray *plhs[] = { Ds };
-
-		mexFunction(1, plhs, 7, prhs);
-
-		double* ptr = mxGetPr(plhs[0]);
-		cout << ptr[0] << endl;
-	}
-
 
 	if (choiceNum.compare("-1") == 0)
 	{
@@ -1092,9 +1064,7 @@ int main(int argc, char** argv)
 	// Accuratly find distance between neighbors and judge duplicates.
 	//findDuplicate(fileDir, 20);
 
-	// Total num of duplicates based on thd.
-	//int c = countDuplicate(fileDir, 20);
-	//cout << c << endl;
+	
 
 	
 	
